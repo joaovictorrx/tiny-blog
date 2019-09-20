@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'MainController@index')->name('blog.home');
+Route::get('/post/{slug}', 'MainController@show')->name('show.post');
 
 Route::group(['prefix' => 'admin'], function () {
   Route::get('/', 'AdminController@index')->name('dashboard');
@@ -28,4 +29,6 @@ Route::group(['prefix' => 'admin'], function () {
   });
 
   Auth::routes();
-}); 
+});
+
+

@@ -12,22 +12,28 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light shadow">
     <div class="container">
-  
-      <a class="navbar-brand mx-auto" href="{{ route('blog-home') }}">
-        Tiny Blog =D
-      </a>
+      <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ route('blog.home') }}">Tiny <strong>Blog</strong> 🤘</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('login') }}">Login</a>
+        </li>
+      </ul>
     </div>
   </nav>
-    
+
   @yield('content')
+ 
   
-<footer class="pt-5 bg-primary">
+<footer class="py-5 bg-primary">
   <div class="container">
-    <div class="row justify-content-center pb-5">
-      <div class="col-12 col-md-4 mb-4 mb-md-0 text-center align-self-center">
-        <img src="{{ asset('img/lg-grau-tecnico-branca.svg') }}" alt="">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h4>João Victor Xavier</h4>
+        <h5>Desenvolvedor</h5>
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@ $factory->define(Post::class, function (Faker $faker) {
     return [
         "title" =>  $title,
         "slug" => Str::slug($title),
-        "body" => $faker->text,
+        "body" => $faker->realText(1000, 2),
         "image" => $faker->imageUrl(640, 480, 'sports'),
         "published" => $faker->boolean(75),
     ]; 

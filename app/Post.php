@@ -25,5 +25,9 @@ class Post extends Model
     {
         return $this->belongsToMany('App\Tag');
     }
+
+    public function scopePublished($query){
+        return $query->where('published', 1);
+    }
     
 }
