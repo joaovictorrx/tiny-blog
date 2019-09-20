@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Testimonial;
+use App\Post;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -24,6 +24,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $posts = Post::orderBy('id','DESC')->get();
+        return view('admin.dashboard')->with('posts', $posts);
     }
 }

@@ -14,5 +14,8 @@
 Route::get('/', 'MainController@index')->name('blog-home');
 
 Route::group(['prefix' => 'admin'], function () {
+  Route::get('/', 'AdminController@index')->name('dashboard');
+  Route::get('/posts', 'AdminController@index');
+
   Auth::routes();
 }); 
