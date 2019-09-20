@@ -19,7 +19,7 @@ class MainController extends Controller
     public function index()
     {
         //$client = new \GuzzleHttp\Client();
-        $testimonials = Testimonial::approved()->with('unit.city.state', 'unit.city', 'unit')->orderBy('id','DESC')->limit(10)->get();
+        //$testimonials = Testimonial::approved()->with('unit.city.state', 'unit.city', 'unit')->orderBy('id','DESC')->limit(10)->get();
     
        // $response = $client->request('GET', "https://www.googleapis.com/youtube/v3/videos?id=$video_id_list&key=AIzaSyDqU4sMwxgXHxE5nvTW8xHByfhdBjUZmnA&part=snippet,statistics");
        // $youtube_api_response = json_decode($response->getBody(), true);

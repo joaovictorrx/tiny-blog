@@ -26,7 +26,7 @@
     <div class="col-md-12">
         <div class="box box-default">
             <div class="box-header with-border">
-                <a href="" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Novo Post</a>
+                <a href="{{ route('new.post') }}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Novo Post</a>
             </div>
 
             <div class="box-body">
@@ -50,8 +50,11 @@
                             <td>{{ ($post->published == 1)?'Publicado':'Não Publicado' }}</td>
                             <td>{{ $post->created_at }}</td>
                             <td>
-                                <a href="" class="btn btn-primary"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                <a href="" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <form class="form-inline" action="{{ route('destroy.post', $post) }}" method="POST">
+                                    {!! csrf_field() !!}
+                                    <a href="{{ route('edit.post', $post) }}" class="btn btn-primary"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                    <button type="submit" class="btn btn-danger btn-destroy"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
@@ -69,7 +72,7 @@
 
 <script src="//cdn.datatables.net/plug-ins/1.10.19/sorting/date-de.js"></script>
 <script>
-    $(document).ready( function () {
+    $(document).ready( function () {   
         $('#table').DataTable({
             order: [],
             language: {

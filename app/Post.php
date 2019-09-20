@@ -13,7 +13,7 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'slug', 'image', 'body'
+        'title', 'slug', 'image', 'body', 'published', 'author_id'
     ];
 
     public function author()
