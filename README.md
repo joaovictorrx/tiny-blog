@@ -34,3 +34,11 @@ E por fim subir o servidor local
 ```bash
 php artisan serve
 ```
+
+## Acessando o dashboard
+Clique em login e insira as seguintes credenciais:
+
+```bash
+Login: admin@admin.com
+Pass: password
+```
