@@ -22,6 +22,12 @@
             {{ $post->body }}
           </div>
           <p>{{ $post->author->name }}, {{ $post->created_at->diffForHumans() }}.</p>
+          <p>
+            TAGS:
+            @foreach ($post->tags as $tag)
+              <span class="badge badge-primary">{{ $tag->name }}</span>
+            @endforeach
+          </p>
         </div>
     </div>
   </div>
